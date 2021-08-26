@@ -1,15 +1,16 @@
 import graph_Tue as Graph
 
+
 def BFS(tree, initialState, goalTest):
     frontier = []
     frontier.append(initialState)
     explored = []
     while len(frontier) > 0:
-        print("Frontier >> ", frontier)     
-        state = frontier.pop(0) # xét điểm đầu tiên trong hàng đợi
+        print("Frontier >> ", frontier)
+        state = frontier.pop(0)  # xét điểm đầu tiên trong hàng đợi
         state_node = Graph.Node(state)
         explored.append(state)
-        print("Explored >> ", explored)  # các đỉnh đã duyệt 
+        print("Explored >> ", explored)  # các đỉnh đã duyệt
 
         if goalTest == state:
             return True

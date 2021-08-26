@@ -1,16 +1,16 @@
 import graph_Tue as Graph
 
+
 def DFS(tree, initialState, goalTest):
     frontier = []
     frontier.append(initialState)
     explored = []
     while len(frontier) > 0:
         print("Frontier >> ", frontier)
-    #    state = frontier.pop(len(frontier)-1)
-        state = frontier.pop(-1)    # 2 dòng có giá trị ngang nhau 
+        state = frontier.pop(-1)    # pop phần tử cuối của mảng
         state_node = Graph.Node(state)
         explored.append(state)
-        print(explored)
+        print("Explored >> ", explored)  # các đỉnh đã duyệt
 
         if goalTest == state:
             return True
@@ -19,7 +19,6 @@ def DFS(tree, initialState, goalTest):
             if neighbor not in list(set(frontier + explored)):
                 frontier.append(neighbor)
     return False
-
 
 
 if __name__ == "__main__":
