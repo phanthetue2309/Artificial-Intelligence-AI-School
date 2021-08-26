@@ -8,3 +8,5 @@
     - Logistic Regresion
     - K-means clustering
     - A Start
+    - Matrix Factorization
+    - Neural Network
