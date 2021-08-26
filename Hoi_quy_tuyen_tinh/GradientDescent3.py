@@ -2,12 +2,18 @@ import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 # Gradient Descent
+
+
 def rad(w):
     N = Xbar.shape[0]
-    return (1/N)*Xbar.T.dot((Xbar.dot(w)) -y)
+    return (1/N)*Xbar.T.dot((Xbar.dot(w)) - y)
+
+
 def L(w):
     N = Xbar.shape[0]
     return 0.5/N*np.linalg.norm(y - Xbar.dot(w))**2
+
+
 def myGD(w_init, grad, n):
     w = [w_init]
     for i in range(100):
@@ -17,6 +23,7 @@ def myGD(w_init, grad, n):
        # print(w_ne)
         w.append(w_new)
     return (w, i)
+
 
 def myGD_Momentum(theta_init, grad, lamda, Xema):
     theta = [theta_init]
@@ -30,17 +37,19 @@ def myGD_Momentum(theta_init, grad, lamda, Xema):
         v_old = v_new
     return (i, theta)
 
+
 def myGD_NAG(theta_init, grad, lamda, Xema):
     theta = [theta_init]
     v_old = [np.zeros_like(theta_init)]
     for i in range(100):
-        v_new = Xema*v_old[-1] + lamda *grad(theta[-1]-Xema*v_old[-1])
+        v_new = Xema*v_old[-1] + lamda * grad(theta[-1]-Xema*v_old[-1])
         theta_new = theta - v_new
         if np.linalg.norm(grad(theta_new-Xema*v_new)) / np.array(theta_init).size < 1e-3:
             break
         theta.append(theta_new)
         v_old.append(v_new)
-    return (i,theta)
+    return (i, theta)
+
 
 if __name__ == '__main__':
     X = np.random.rand(1000)
