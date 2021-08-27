@@ -29,19 +29,25 @@ if __name__ == "__main__":
 
     tree.add_edges_from(
         [
-            ("S", "A", 3),
-            ("S", "B", 6),
-            ("S", "C", 2),
-            ("A", "D", 3),
-            ("B", "G", 9),
-            ("B", "E", 2),
-            ("C", "E", 1),
-            ("D", "F", 5),
-            ("E", "H", 5),
-            ("F", "E", 6),
-            ("H", "G", 8),
-            ("F", "G", 5),
+            ("S", "A"),  
+            ("S", "B"),
+            ("S", "C"),
+            ("A", "D"),
+            ("A", "B"),
+            ("B", "C"),
+            ("B", "D"),
+            ("B", "F"),
+            ("B", "G"),
+            ("C", "F"),
+            ("D", "E"),
+            ("E", "G"),
+            ("F", "E"),
+            ("F", "H"),
+            ("H", "G"),
         ]
     )
     result = DFS(tree, "S", "G")
-    print(result)
+    if (result) : 
+        print(result)
+    else : 
+        print("Khong tim thay duong di")

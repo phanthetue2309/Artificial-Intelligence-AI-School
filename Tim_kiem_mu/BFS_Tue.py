@@ -25,22 +25,23 @@ if __name__ == "__main__":
     tree = Graph.Tree()
     tree.add_node("S")
     tree.add_node_from(["S", "A", "B", "C", "D", "E", "F", "G", "H"])
-    print(tree.show_nodes())
-
     tree.add_edges_from(
         [
-            ("S", "A", 3),  # thêm vào tọa độ 2 điểm có trọng số
-            ("S", "B", 6),
-            ("S", "C", 2),
-            ("A", "D", 3),
-            ("B", "G", 9),
-            ("B", "E", 2),
-            ("C", "E", 1),
-            ("D", "F", 5),
-            ("E", "H", 5),
-            ("F", "E", 6),
-            ("H", "G", 8),
-            ("F", "G", 5),
+            ("S", "A"),  
+            ("S", "B"),
+            ("S", "C"),
+            ("A", "D"),
+            ("A", "B"),
+            ("B", "C"),
+            ("B", "D"),
+            ("B", "F"),
+            ("B", "G"),
+            ("C", "F"),
+            ("D", "F"),
+            ("D", "E"),
+            ("E", "G"),
+            ("F", "E"),
+            ("H", "G"),
         ]
     )
     result = BFS(tree, "S", "G")
